@@ -1,8 +1,9 @@
-function HomePage(){
-    return( 
-    <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-8xl font-bold ">Fisker Ocean</h1>
-        </div>   
-    )
+import Header from "@/components/Header";
+function HomePage() {
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
-export default HomePage
+export default HomePage;
