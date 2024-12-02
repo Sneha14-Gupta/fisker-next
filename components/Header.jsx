@@ -15,10 +15,10 @@ function Header() {
           height={100}
           className="w-12 sm:w-16 h-auto cursor-pointer hover:scale-110 transition-transform duration-300"
         />
-        <span className="flex gap-2 items-center">
-          <Image src="globe.svg" alt="globe" width={20} height={20} />
+        <a className="flex gap-2 items-center" href='#'>
+          <Image src="globe.svg" alt="globe-icon" width={20} height={20} />
           <p className="text-sm sm:text-base">US</p>
-        </span>
+        </a>
       </header>
     </div>
   );
