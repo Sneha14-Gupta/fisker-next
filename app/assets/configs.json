@@ -1,0 +1,39 @@
+{
+  "Black Pearl": {
+    "finish":"Metallic gloss",
+    "description":"A mysterious, seductive black with a metallic blue shimmer.",
+    "Wheel": {
+      "Aerostealth": "/images/wheels/Aerostealth.png",
+      "Slipstream": "/images/wheels/Slipstream_black.png",
+      "Vortex": "/images/wheels/Vortex.png"
+    }
+  },
+  "Blue Pearl": {
+    "finish":"Metallic gloss",
+    "description":"A mysterious, seductive black with a metallic blue shimmer.",
+    "Wheel": {
+      "Aerostealth": "/images/wheels/Aerostealth.png",
+      "Slipstream": "/images/wheels/Slipstream_black.png",
+      "Vortex": "/images/wheels/Vortex.png"
+    }
+  },
+  "Red Pearl": {
+    "finish":"Metallic gloss",
+    "description":"A mysterious, seductive black with a metallic blue shimmer.",
+    "Wheel": {
+      "Aerostealth": "/images/wheels/Aerostealth.png",
+      "Slipstream": "/images/wheels/Slipstream_black.png",
+      "Vortex": "/images/wheels/Vortex.png"
+    }
+  },
+  "White Pearl": {
+    "finish":"Metallic gloss",
+    "description":"A mysterious, seductive black with a metallic blue shimmer.",
+    "Wheel": {
+      "Aerostealth": "/images/wheels/Aerostealth.png",
+      "Slipstream": "/images/wheels/Slipstream_black.png",
+      "Vortex": "/images/wheels/Vortex.png"
+    }
+  }
+}
+

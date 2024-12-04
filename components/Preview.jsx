@@ -1,5 +1,5 @@
 import Image from "next/image";
-function Preview() {
+function Preview({color,interior,wheel}) {
   return (
     <>
       <Image
