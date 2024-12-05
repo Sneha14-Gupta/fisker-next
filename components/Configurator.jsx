@@ -1,72 +1,136 @@
 "use client";
-import Image from "next/image";
-function Configurator() {
+
+function Configurator({color, interior, wheel, updateOptions}) {
+  const exteriorSwatch = [
+    {
+      id: 0,
+      name: "Sun Soaked",
+      src: "/swatch/sun_soaked.png",
+    },
+    {
+      id: 1,
+      name: "Sea Grass",
+      src: "/swatch/sea_grass.png",
+    },
+    {
+      id: 2,
+      name: "Black Pearl",
+      src: "/swatch/black_pearl.png",
+    },
+    {
+      id: 3,
+      name: "Red Planet",
+      src: "/swatch/red_planet.png",
+    },
+    {
+      id: 4,
+      name: "Stealth Green",
+      src: "/swatch/stealth_green.png",
+    },
+    {
+      id: 5,
+      name: "Blue Planet",
+      src: "/swatch/blue_planet.png",
+    },
+  ];
+
+  const interiorSwatch = [
+    {
+      id: 0,
+      name: "dark",
+      src: "/swatch/interior/dark.png",
+    },
+    {
+      id: 1,
+      name: "light",
+      src: "/swatch/interior/light.png",
+    },
+  ];
+
+  const wheelsOptions = [
+    {
+      id: 0,
+      name: "AeroStealth",
+      src: "/wheels/aerostealth.webp",
+    },
+    {
+      id: 1,
+      name: "SlipStream Black",
+      src: "/wheels/slipstream_black.webp",
+    },
+    {
+      id: 2,
+      name: "Vortex",
+      src: "/wheels/vortex.webp",
+    },
+  ];
+
   return (
-    <>
-      <h1 className="text-2xl md:text-4xl font-semibold text-blue-900">
+    <div>
+      {/* Headings */}
+      <h1 className="text-2xl md:text-4xl font-semibold text-blue-950">
         Fisker Ocean
       </h1>
-      <p className="py-2">Customize Your Car</p>
+      <p className="py-2 text-xl">
+        Configure your very own, with the options to choose from 6 exterior, 2
+        interior and 3 wheels options.
+      </p>
 
+      {/* Exterior Colors */}
       <div className="my-3">
-        <h3 className="font-bold uppercase">Exterior Color</h3>
+        <h3 className="font-bold uppercase mb-3">Exterior Color</h3>
         <div className="flex gap-2">
-          {new Array(6).fill(1).map((_, index) => (
+          {exteriorSwatch.map((colorObj) => (
             <button
-              key={index}
-              onClick={() => console.log(" Exterior clicked")}
-              className={`hover:scale-105 transition-transform duration-100 ${index===0 ? "border-2 border-blue-300" : ""}`}
+              key={colorObj.id}
+              onClick={() => updateOptions("color", colorObj.name)}
+              className={`hover:scale-105 transition-transform duration-100  ${
+                color === colorObj ? "border-2 border-blue-300 rounded-full" : ""
+              }`}
             >
-              <Image
-                src={"/images/color.png"}
-                alt="color-picker"
-                width={40}
-                height={40}
-              />
+              <img src={colorObj.src} alt="Black Pearl" className="w-12" />
             </button>
           ))}
         </div>
       </div>
-      <div>
-        <h3>Interior Color</h3>
+
+      {/* Interior Colors */}
+      <div className="my-12">
+        <h3 className="font-bold uppercase mb-3">Interior Color</h3>
         <div className="flex gap-2">
-          {new Array(3).fill(1).map((_, index) => (
+          {interiorSwatch.map((colorObj) => (
             <button
-              key={index}
-              onClick={() => console.log(" Interior clicked")}
-              className="hover:scale-105 transition-transform duration-100"
+              key={colorObj.id}
+              onClick={() => updateOptions("interior", colorObj.name)}
+              className={`hover:scale-105 transition-transform duration-100  ${
+                color === colorObj ? "border-2 border-blue-300 rounded-full" : ""
+              }`}
             >
-              {" "}
-              <Image
-                src={"/images/dark.png"}
-                alt="color-picker"
-                width={40}
-                height={40}
-              />
+              <img src={colorObj.src} alt="Black Pearl" className="w-14" />
             </button>
           ))}
         </div>
       </div>
+
+      {/* Wheel Options */}
       <div className="my-3">
-        <h3 className="font-bold uppercase">Wheel Color</h3>
+        <h3 className="font-bold uppercase mb-3">Wheel Options</h3>
         <div className="flex gap-2">
-          {new Array(2).fill(1).map((_, index) => (
+          {wheelsOptions.map((wheelObj) => (
             <button
-              key={index}
-              onClick={() => console.log(" Wheel clicked")}
-              className="hover:scale-105 transition-transform duration-100"
+              key={wheelObj.id}
+              onClick={() => updateOptions("wheel", wheelObj.name)}
+              className={`hover:scale-105 transition-transform duration-100  ${
+                wheel.id === 0 ? "border-2 border-blue-300" : ""
+              }`}
             >
-              <Image
-                src={"/images/wheel-option.webp"}
-                alt="color-picker"
-                width={80}
-                height={80}
-              />
+              <img src={wheelObj.src} alt="Black Pearl" className="w-16" />
             </button>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
+
 export default Configurator;
